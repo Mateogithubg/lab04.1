@@ -1,0 +1,273 @@
+// Zadanie 25
+/*#include <stdio.h>
+main(){
+	char klawisz; // Przechowanie klawisza
+	printf("Autor: Mateusz Garbacik\n");
+	printf("Program informujacy czy zostal wcisniety klawisz t czy tez inny\n");
+	printf("Nacisnij dowolny klawisz i wcisnij enter\n");
+	if (scanf_s("%c", &klawisz) != 1 || getchar() != '\n') // Sprawdzenie czy liczba spelnia okreslone warunki
+	{
+		printf("Blad, koniec");
+		return 0;
+	}
+	if (klawisz == 't' || klawisz == 'T') { // Sprawdzenie, czy litera jest T lub t
+		printf("Wcisniety klawisz to t lub T\n");
+		return 0;
+	}
+	else 
+		printf("Blad, koniec\n");
+	return 0;
+}
+*/
+// Zadanie 26
+/*#include <stdio.h>
+#include <math.h>
+main() {
+	printf("Autor: Mateusz Garbacik\n");
+	printf("Program ktory mas sprawdzic czy wspolrzedne podane przez uzytkownika znajduja sie w kole o wspolrzednych (0,0) i promieniu r=1\n");
+	const float x = 0, y = 0, r = 1; // Wprowadzenie stalych
+	float x1, y1; // Przechowanie x1 i x2
+	printf("Podaj wspolrzedne x i y\n"); 
+	if (scanf_s("%f", &x1) != 1 || getchar() != '\n' || x1<-1 || x1>1) // Sprawdzenie czy podana wspolrzedna jest prawidlowa
+	{
+		printf("Blad, koniec - podane wspolrzedne nie naleza do tego kole\n");
+		return 0;
+	}
+	if (scanf_s("%f", &y1) != 1 || getchar() != '\n'|| y1<-1 || y1>1) // Sprawdzenie czy podana wspolrzedna jest prawidlowa
+	{
+		printf("Blad, koniec - podane wspolrzedne nie naleza do tego kole\n");
+		return 0;
+	}
+	if ((x1-x)*(x1-x) + (y1-y)*(y1-y) <=r*r) // Sprawdzenie warunku czy te wspolrzedne znajduja sie w kole
+	{
+		printf("Podane wspolrzedne znajduja sie w tym kole\n");
+		printf("Koniec\n");
+		return 0;
+	}
+}
+*/
+// Zadanie 27
+/*
+#include <stdio.h>
+main() {
+	printf("Autor: Mateusz Garbacik\n");
+	printf("Program ktory ma sprawdzic czy podane przez uzytkownika wspolrzedne punktu leza na okregu o wspolrzednych (0,0) i r =1, lub wewnatrz tego okregu lub na zewnatrz\n");
+	const float a = 0, b = 0, r = 1;
+	float x, y;
+	printf("Podaj wspolrzedne x i y\n");
+	if (scanf_s("%f", &x) != 1 || getchar() != '\n') // Sprawdzenie czy podana wspolrzedna jest prawidlowa
+	{
+		printf("Blad, koniec\n");
+		return 0;
+	}
+	if (scanf_s("%f", &y) != 1 || getchar() != '\n') // Sprawdzenie czy podana wspolrzedna jest prawidlowa
+	{
+		printf("Blad, koniec\n");
+		return 0;
+	}
+	if ((x - a)*(x - a) + (y - b)*(y - b) == r * r)
+	{
+		printf("Dla tych wspolrzednych ten punkt lezy na okregu\n");
+	}
+	else if ((x - a)*(x - a) + (y - b)*(y - b) >= r * r)
+	{
+		printf("Podany punkt lezy na zewnatrz tego okregu\n");
+	}
+	else
+	{
+		printf("Podany punkt lezy wewnatrz tego okregu\n");
+	}
+	printf("Koniec programu\n");
+	return 0;
+}
+*/
+// Zadanie 28
+/*
+# include <stdio.h>
+main() {
+	printf("Autor: Mateusz Garbacik\n");
+	printf("Program rozstrzygajacy czy podany punkt o wspolrzednych x i y znajduje sie w 1 cwiartce\n");
+	float x, y;
+	printf("Podaj wspolrzedne x i y(Podaj pierwsza i zatwierdz enterem, nastepnie druga:\n");
+	if (scanf_s("%f", &x) != 1 || getchar() != '\n') // Sprawdzenie czy podana wspolrzedna jest prawidlowa
+	{
+		printf("Blad, koniec\n");
+		return 0;
+	}
+	if (scanf_s("%f", &y) != 1 || getchar() != '\n') // Sprawdzenie czy podana wspolrzedna jest prawidlowa
+	{
+		printf("Blad, koniec\n");
+		return 0;
+	}
+	if (x >= 0 && y >= 0)
+	{
+		printf("Punkt o podanych wspolrzednych nalezy do I cwiartki\n");
+		printf("Koniec programu\n");
+		return 0;
+	}
+	else
+	{
+		printf("Punkt o podanych wspolrzednych nie nalezy do I cwiartki\n");
+		printf("Koniec programu\n");
+		return 0;
+	}
+	return 0;
+}*/
+// Zadanie 29
+/*
+#include <stdio.h>
+main() {
+	printf("Autor: Mateusz Garbacik\n");
+	printf("Program sluzacy do sprawdzenia do ktorej cwiartki lub do ktorej osi nalezy punkt o podanych wspolrzednych x i y\n");
+	printf("Podaj dowolne x i y: (najpierw podaj pierwsza wspolrzedna, zatwierdz enterem, a nastepnie druga i rowniez zatwierdz enterem)\n");
+	float x, y;
+	if (scanf_s("%f", &x) != 1 || getchar() != '\n')
+	{
+		printf("Blad, koniec - wpisz poprawnie wspolrzedna x\n");
+		return 0;
+	}
+	if (scanf_s("%f", &y) != 1 || getchar() != '\n')
+	{
+		printf("Blad, koniec  - wpisz poprawnie wspolrzedna y\n");
+		return 0;
+	}
+	else if (x == 0 && y == 0)
+	{
+		printf("Punkt o podanych wspolrzednych lezy na osi x i y\n");
+	}
+	else if (x == 0)
+	{
+		printf("Punkt o podanych wspolrzednych lezy na osi y\n");
+	}
+	else if (y == 0)
+	{
+		printf("Punkt o podanych wspolrzednych lezy na osi x\n");
+	}
+	else if (x > 0 && y > 0)
+	{
+		printf("Punkt o podanych wspolrzednych nalezy do I cwiartki\n");
+	}
+	else if (x < 0 && y < 0)
+	{
+		printf("Punkt o podanych wspolrzednych nalezy do III cwiartki\n");
+	}
+	else if (x > 0 && y < 0)
+	{
+		printf("Punkt o podanych wspolrzednych nalezy do IV cwiartki\n");
+	}
+	else if (x < 0 && y > 0)
+	{
+		printf("Punkt o podanych wspolrzednych nalezy do II cwiartki\n");
+	}
+	printf("Koniec programu");
+	return 0;
+}*/
+// Zadanie 30
+/*
+#include <stdio.h>
+main()
+{
+	printf("Autor: Mateusz Garbacik\n\n");
+	printf("Program sluzacy do sprawdzenia czy podana liczba wymierna w postaci rozwiniecia dziesietnego jest liczba calkowita czy tez nie, w takim wypadku program ma zaokraglic dana liczbe w dol do najblizszej liczby calkowitej\n\n");
+	printf("Podaj liczbe wymierna w postaci rozwiniecia dziesietnego\n\n");
+	float x;
+	if (scanf_s("%f", &x) != 1 || getchar() != '\n')
+	{
+		printf("Blad, koniec\n");
+		return 0;
+	}
+	else if (x - (int)x != 0)
+	{
+		printf("Podana liczba jest niecalkowita, a jej wartosc zaokraglenia w dol to %d\n", (int)x);
+	}
+	else
+	{
+		printf("Podana liczba jest calkowita\n");
+	}
+	printf("Koniec programu\n");
+	return 0;
+}*/
+// Zadanie 31
+#include <stdio.h>
+#include <math.h>
+main()
+{
+	printf("Autor: Mateusz Garbacik\n");
+	printf("Program ktory roztrzyga czy podany punkt spelnia ponizsze warunki\n");
+	float x, y;
+	if (scanf_s("%f", &x) != 1 || getchar() != '\n')
+	{
+		printf("Blad, koniec, x nie nalezy do dziedziny\n");
+		return 0;
+	}
+	if (scanf_s("%f", &y) != 1 || getchar() != '\n')
+	{
+		printf("Blad, koniec\n");
+		return 0;
+	}
+
+	else if (x > 0 && x < 1)
+	{
+		printf("Punkt znajduje sie w dziedzinie funkcji\n");
+	}
+	float wartosc = sqrt(abs(acos((double)x) + exp((double)x) / log((double)x)));
+	if (wartosc == y)
+	{
+		printf("Punkt o podanych wspolrzednych jest punktem wykresu funkcji f(x)\n");
+	}
+	else if (y > wartosc)
+	{
+		printf("Punkt o podanych wspolrzednych lezy nad wykresem funkcji f(x)\n");
+	}
+	else
+	{
+		printf("Punkt o podanych wspolrzednych lezy pod wykresem funkcji f(x)\n");
+	}
+	printf("Koniec programu\n");
+	return 0;
+}
+
+// Zadanie 32
+#include<stdio.h>
+int main()
+{
+	int x;
+	printf("Testowanie instr. przypisania.\n\n");
+	x = 3;
+	printf("Po x=3;       wart. x jest: %d\n", x);
+	x = 5;
+	printf("Po x=5;       wart. x jest: %d\n", x);
+	x += 2;
+	printf("Po x=x+2;     wart. x jest: %d\n", x);
+	x *= x + 1);
+	printf("Po x=x*(x+1); wart. x jest: %d\n", x);
+	x += 1;
+	printf("Po x=x+1;     wart. x jest: %d\n", x);
+	x -= (3 / 4);
+	printf("Po x=x-(3/4); wart. x jest: %d\n", x);
+	x /= (x + 1);
+	printf("Po x=x/(x+1); wart. x jest: %d\n", x);
+	x--;
+	printf("Po x--;       wart. x jest: %d\n", x);
+	printf("\n\nKoniec programu.  \n");
+	return 0;
+}
+// Zadanie 33
+#include <stdio.h>
+#include <math.h>
+main()
+{
+int y;
+x = 1;
+y = x + 7;			/*1*/
+y = (x + 1) + 7;	/*2*/
+y = 7 + x;			/*3*/
+y = 7 + (x + 1);	/*4*/
+y = 7 + (x + 1);	/*5*/
+// te same wyniki dadza instrukcje z zadania o numerach: 1 i 3, 2 i 4 i 5
+printf("Koniec programu.\n\n");
+return 0;
+}
+
+
+
